@@ -2,19 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Fixed Width CSS Layouts - 2 Column - fw-12-2-col</title>
+<title>Cerebral Gaming Systems</title>
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="css/main.css" />
+<!-- CSS -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="./css/main.css" />  
+<link rel="stylesheet" type="text/css" href="./css/iThing.css" />     
 
-  
-    
-
- 
-    
-    
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>   
+<!-- Includes -->    
+   
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>   
+<script type="text/javascript" src="http://tableau.russellchristopher.org/javascripts/api/tableau_v8.debug.js"></script> 
+<script type="text/javascript" src="scripts/main.js"></script>   
+<script type="text/javascript" src="scripts/jQDateRangeSlider-min.js"></script>
     
 </head>
 
@@ -25,48 +26,53 @@
    
          <!-- Begin Header -->
          <div id="header">
-		 
-		       This is the Header		 
-			   
+		   <div id="logo">
+               	<img id="cerebrallogo" src="images/Cerebral.png">
+                <div id='slider'></div> 
+           </div>
+	 
+            
 		 </div>
 		 <!-- End Header -->
 		 
 		 <!-- Begin Left Column -->
 		 <div id="leftcolumn">
-		 
-		       Left Column
+         <div id="selectionDiv">
+		       Select A Game Type.
+         </div>    
         <table class="mytable" border="0"> 
-        <p><br><br></p>
+       
         <tr>
-            <td><img src="images/Bikini.png"></td>
-            <td><img src="images/Bones.png"></td>
-            <td><img src="images/Bow.png"></td>
-            <td><img src="images/Condom.png"></td>
+            <td onmouseover="changeText('Warfare')" onmouseout="defaultText()"><img id='warfare' src="images/warefare.png"></td>
+            <td onmouseover="changeText('Sports Games')" onmouseout="defaultText()"><img id='sports' src="images/sportsgames.png"></td>
+            <td onmouseover="changeText('Card Games')" onmouseout="defaultText()"><img id='cardgames' src="images/cardgames.png"></td>
+            <td onmouseover="changeText('Swords and Magic')" onmouseout="defaultText()"><img id='swords' src="images/swords.png"></td>
         </tr>
         <tr>
-            <td><img src="images/Bra.png"></td>
-            <td><img src="images/Bones.png"></td>
-            <td><img src="images/Winebottle.png"></td>
-            <td><img src="images/Bow.png"></td>
+            <td onmouseover="changeText('Party Games!')" onmouseout="defaultText()"><img id ='partygames' src="images/partygames.png"></td>
+            <td onmouseover="changeText('Strategy Games')" onmouseout="defaultText()"><img id='strategygames' src="images/strategygames.png"></td>
+            <td onmouseover="changeText('Vampires and Zombies')" onmouseout="defaultText()"><img id='spooky' src="images/spooky.png"></td>
+            <td onmouseover="changeText('Classic Arcade Games')" onmouseout="defaultText()"><img id='classicgames' src="images/classicgames.png"></td>
         </tr>
-        </table>  
-        
-        <p> <br>
+        </table>
+
+        <div id='ipsum'> <p>
              Bacon ipsum dolor sit amet minim sunt sed pork belly, dolore drumstick veniam aute leberkas shankle pork loin. Consectetur frankfurter anim voluptate. Fugiat tenderloin sunt, bresaola leberkas porchetta laboris quis shankle consectetur ea pig beef eiusmod aliquip. Ut tenderloin nostrud ground round ut tempor do prosciutto in. Pariatur bresaola drumstick reprehenderit sirloin beef ribs short loin filet mignon shankle ad in ea nisi hamburger.
 
-Ut beef flank eu exercitation short loin filet mignon enim ham ham hock consequat. Hamburger shoulder chuck kevin. In mollit shoulder kielbasa. Short loin duis brisket minim ut, sunt  Corned beef ribeye commodo frankfurter tenderloin. Ad mollit short loin, pork chop bresaola salami officia sausage nostrud laboris brisket.
-         <br><br>    </p>     
+            <span id='bacon'>Ut beef flank eu exercitation short loin filet mignon enim ham ham hock consequat. Hamburger shoulder chuck kevin. In mollit shoulder kielbasa. Short loin duis brisket minim ut, sunt  Corned beef ribeye commodo frankfurter tenderloin. Ad mollit short loin, pork chop bresaola salami officia sausage nostrud laboris brisket.
+            </span>
+         </div>
+           </p>     
              
         <ul id="menu">
-          <li><a href="#">Menu Item</a></li>
+          <li><a href="#">My Profile</a></li>
+          <li><a href="#">MMORPG Login</a></li>   
           <li><a href="#">Another Item</a></li>
-          <li><a href="#">Sub-Item</a>
+          <li><a href="#">Report Library</a>
             <ul>
-              <li><a href="#">Item 3-1</a></li>
-              <li><a href="#">Item 3-2</a></li>
-              <li><a href="#">Item 3-3</a></li>
-              <li><a href="#">Item 3-4</a></li>
-              <li><a href="#">Item 3-5</a></li>
+              <li><a href="#">Sales Report</a></li>
+              <li><a href="#">Activity Report</a></li>
+              <li><a href="#">Shipping / CSAT</a></li>
             </ul>
           </li>
         </ul>
@@ -80,11 +86,7 @@ Ut beef flank eu exercitation short loin filet mignon enim ham ham hock consequa
 		 <!-- End Left Column -->
 		 
 		 <!-- Begin Center Column -->
-		 <div id="centercolumn">
-		       
-	          Center Column	
-
-
+		 <div id="thecentercolumn">
 		 </div>
 		 <!-- End Center Column -->
 		 
@@ -99,7 +101,8 @@ Ut beef flank eu exercitation short loin filet mignon enim ham ham hock consequa
    </div>
    <!-- End Wrapper -->
 <script>
-$( "#menu" ).menu();
+$(initialize);    
+
 
 </script>   
 </body>
