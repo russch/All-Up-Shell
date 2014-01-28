@@ -60,6 +60,11 @@ p {
  width: 200px;
  float: left;
 }
+
+#ipsum {height: 262px;
+        width: 200px;
+}
+
 #thecentercolumn { 
  float: left;
  color: #333;

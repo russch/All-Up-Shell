@@ -41,14 +41,14 @@ function initialize(){
     });
     
     // Add click events to each button image
-    $("#warfare").click(filterWarfare);
-    $("#sports").click(filterSports);
-    $("#cardgames").click(filterCardGames);
-    $("#swords").click(filterSwords);
-    $("#strategygames").click(filterStrategyGames);
-    $("#partygames").click(filterPartyGames);
-    $("#spooky").click(filterSpooky);
-    $("#classicgames").click(filterClassicGames);      
+    $("#warfare").click(filterCategories('warfare'));
+    $("#sports").click(filterCategories("sports"));
+    $("#cardgames").click(filterCategories("cardgames"));
+    $("#swords").click(filterCategories("swords"));
+    $("#strategygames").click(filterCategories("strategygames"));
+    $("#partygames").click(filterCategories("partygames"));
+    $("#spooky").click(filterCategories("spooky"));
+    $("#classicgames").click(filterCategories("classicgames"));      
 }
     
 // Utility functions
@@ -144,161 +144,78 @@ function initialize(){
 
     // Filter Categories
 
-    function filterWarfare(){
+    function filterCategories(whichCategory){
        
         // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
+        if (whichViz != "Activity Report") {
             changeText('Not Right Now.'); 
             return 0;
         }
 
 
-        var worksheet = mainViz.getWorkbook().getActiveSheet().getWorksheets().get("Profit by Genre");
-        worksheet.applyFilterAsync("Sub-Genre",     
-                ["Fighters",
+       var worksheet = mainViz.getWorkbook().getActiveSheet().getWorksheets().get("Profit by Genre");
+       category = whichCategory;
+        
+        switch (category)
+        {
+         case "warfare":
+                filterList =["Fighters",
                  "First Person Shooters",
                  "Giant Robots",
                  "Horizontal Shooter",
                  "Military Shooter",
                  "Vertical Shooter",
                  "Hex/Tile-based War",
-                 "Squad-Level"]
-                , "REPLACE");       
-
-    }
-
-    function filterSports(){
-       
-        // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
-            changeText('Not Right Now.'); 
-            return 0;
-        }
-
-
-        var worksheet = mainViz.getWorkbook().getActiveSheet().getWorksheets().get("Profit by Genre");
-        worksheet.applyFilterAsync("Sub-Genre",     
-                ["Baseball",
-                 "Basketball",
-                 "Football (American)",
-                 "Football (Soccer)",
-                 "Golf",
-                 "Racing"]
-                , "REPLACE");       
-
-    }
-
-   function filterCardGames(){
-       
-        // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
-            changeText('Not Right Now.'); 
-            return 0;
-        }
-
-
-        var worksheet = mainViz.getWorkbook().getActiveSheet().getWorksheets().get("Profit by Genre");
-        worksheet.applyFilterAsync("Sub-Genre",     
-                "Card Games", "REPLACE");       
-
-    }          
-    
-   function filterSwords(){
-       
-        // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
-            changeText('Not Right Now.'); 
-            return 0;
-        }
-
-
-        var worksheet = mainViz.getWorkbook().getActiveSheet().getWorksheets().get("Profit by Genre");
-        worksheet.applyFilterAsync("Sub-Genre",     
-                ["Cerebral",
+                 "Squad-Level"];
+            break;
+        case "sports":
+            filterList = ["Baseball",
+                     "Basketball",
+                     "Football (American)",
+                     "Football (Soccer)",
+                     "Golf",
+                     "Racing"]; 
+            break;
+        case "cardgames":
+            cardgames = ["Card Games"];   
+            break;
+        case "swords":
+            filterList = ["Cerebral",
                  "Interactive Fiction",
                  "Multi-genre Adventure",
                  "Rogues",
                  "Space",
-                 "Squad-Level"]
-                , "REPLACE");          
-
-    }
-    
-   function filterPartyGames(){
-       
-        // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
-            changeText('Not Right Now.'); 
-            return 0;
-        }
-
-
-        var worksheet = mainViz.getWorkbook().getActiveSheet().getWorksheets().get("Profit by Genre");
-        worksheet.applyFilterAsync("Sub-Genre",     
-                ["Brain Teasers",
+                 "Squad-Level"];
+            break;
+        case "partygames":           
+            filterList=["Brain Teasers",
                  "Game Shows",
-                 "Word Games and Trivia"]
-                , "REPLACE");          
-
-    }
-
-   function filterStrategyGames(){
-       
-        // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
-            changeText('Not Right Now.'); 
-            return 0;
-        }
-
-
-        var worksheet = mainViz.getWorkbook().getActiveSheet().getWorksheets().get("Profit by Genre");
-        worksheet.applyFilterAsync("Sub-Genre",     
-                ["Card Games",
+                 "Word Games and Trivia"];          
+            break;
+        case "strategygames":
+            filterList = ["Card Games",
                  "Cerebral",
                  "Tetris Variants",
                  "Squad-Level",
                  "Empire Management",
                  "Hex/Tile-based War",
-                 "Multi-genre Strategy"]
-                 , "REPLACE");          
-
-    }
-
-   function filterSpooky(){
-       
-        // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
-            changeText('Not Right Now.'); 
-            return 0;
-        }
-
-
-        var worksheet = mainViz.getWorkbook().getActiveSheet().getWorksheets().get("Profit by Genre");
-        worksheet.applyFilterAsync("Sub-Genre",     
-                ["Rogues",
+                 "Multi-genre Strategy"];
+            break;
+        case "spooky":
+            filterList = ["Rogues",
                  "Cerebral",
                  "Other Action",
                  "Hybrid",
-                 "Interactive Fiction"]
-                 , "REPLACE");          
-
-    }
-
-   function filterClassicGames(){
-       
-        // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
-            changeText('Not Right Now.'); 
-            return 0;
-        }
-
-
-        var worksheet = mainViz.getWorkbook().getActiveSheet().getWorksheets().get("Profit by Genre");
-        worksheet.applyFilterAsync("Sub-Genre",     
-                ["Pinball",
+                 "Interactive Fiction"]; 
+            break;
+        case "classicgames":        
+            filterList =  ["Pinball",
                  "Tetris Variants",
-                 "Breakout Variants"]
-                 , "REPLACE");          
+                 "Breakout Variants"];
+            break;
+        }
+       
+        worksheet.applyFilterAsync("Sub-Genre",filterList, "REPLACE");          
 
     }
 
