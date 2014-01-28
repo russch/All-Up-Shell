@@ -24,18 +24,9 @@ function initialize(){
                     whichViz = "Activity"; // Track which viz is being displayed...
                     renderViz('https://tableau.russellchristopher.org/t/SkunkWorks/views/CerebralGameSelling/ActivityDashboard');
                     //Add Slider
-                    $("#slider").dateRangeSlider({
-                        bounds: {
-                        min: new Date(1998, 1, 1),
-                        max: new Date(2001, 11, 30)    
-                    },
-                      defaultValues:{
-                        min: new Date(1998, 1, 1),
-                        max: new Date(2001, 11, 30)
-                      }});
-
+                    initSlider();
                     //Remove Bacon Text
-                    $("#bacon").remove();
+                    //$("#bacon").remove();
                     break;
                 case "Shipping / CSAT":
                     whichViz = "Shipping"; // Track which viz is being displayed...
@@ -80,15 +71,53 @@ function initialize(){
     // Clean crap out of #thecentercolumn div
 
     function disposeViz() {
-          if(mainVizDiv.children("#profile").size() > 0) {mainVizDiv.empty();}      
+    
+        // Get rid of profile pic
+        if(mainVizDiv.children("#profile").size() > 0) {mainVizDiv.empty();}      
         
+        
+       //destory vizzes 
         if (typeof(mainViz) == 'undefined' || mainViz === null) {
             return;
         } else {
             mainViz.dispose();
         }
+        
+        //destroy slider
+        try 
+        {
+            $("#slider").dateRangeSlider("destroy");
+        }
+        catch (err)
+        {
+            console.log(err);
+        }
+            
+        
 
     }
+
+    //Used to init date slider
+    function initSlider()
+    {
+        // Init
+        $("#slider").dateRangeSlider({
+            bounds: {
+            min: new Date(1998, 1, 1),
+            max: new Date(2001, 11, 30)    
+        },
+          defaultValues:{
+            min: new Date(1998, 1, 1),
+            max: new Date(2001, 11, 30)
+           }});  
+        // Event handler for date/time change            
+        $("#slider").bind("valuesChanged", function(e, data){
+          start = new Date(data.values.min);
+          end = new Date(data.values.max);                       
+          applyRangeFilterAsync(start, end)
+        });
+    }
+
 // Tableau Stuff
 
     // Render a Viz
@@ -272,3 +301,22 @@ function initialize(){
                  , "REPLACE");          
 
     }
+
+function applyRangeFilterAsync(start, end) {
+
+
+       worksheet = mainViz.getWorkbook().getActiveSheet().getWorksheets().get("Profit by Time");
+       
+        var beginDate = new Date(start);
+        var endDate = new Date(end);
+        // Specify range to be used by applyRangeFilterAsync
+		var filterOptions = {
+            min: beginDate,
+            max: endDate
+        };
+
+		// Apply filter
+        worksheet.applyRangeFilterAsync("Order Date", filterOptions);
+
+
+}
