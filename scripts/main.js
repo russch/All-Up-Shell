@@ -80,7 +80,10 @@ function initialize(){
     function disposeViz() {
     
         // Get rid of profile pic
-        if(mainVizDiv.children("#profile").size() > 0) {mainVizDiv.empty();}      
+        if(mainVizDiv.children("#profile").size() > 0) {mainVizDiv.empty();}     
+        
+        // Get rid of landing page
+        if ($("#thecentercolumn").children("#landingpage").size() > 0 ) {$("#thecentercolumn").empty();}
         
         //Get rid of Customer Sat Table
         if ($("#thecentercolumn").children("#tblAppendGrid").size() > 0 ) {$("#thecentercolumn").empty();}
@@ -440,7 +443,7 @@ function showGrid(){
             insert: true
         },
         customFooterButtons: [
-                { uiButton: { icons: { primary: 'ui-icon-check' }, label: "Complete" }, btnAttr: { title: 'Submit' }, click: function (evt) { finish() }, atTheFront: true }
+                { uiButton: { icons: { primary: 'ui-icon-check' }, label: "Complete" }, btnAttr: { title: 'Clicking this button will submit selected customers to the CSAT rescue process' }, click: function (evt) { finish() }, atTheFront: true }
             ]
     });
      // Load Rows
