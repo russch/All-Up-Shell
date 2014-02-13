@@ -192,7 +192,7 @@ function initialize(){
    function filterWarfare(){
        
         // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
+        if (whichViz == "Sales" || whichViz == "None" || whichViz == "Shipping") {
             changeText('Not Right Now.'); 
             return 0;
         }
@@ -213,9 +213,9 @@ function initialize(){
     }
 
    function filterSports(){
-       
+ 
         // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
+           if (whichViz == "Sales" || whichViz == "None" || whichViz == "Shipping") {   
             changeText('Not Right Now.'); 
             return 0;
         }
@@ -236,7 +236,7 @@ function initialize(){
    function filterCardGames(){
        
         // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
+           if (whichViz == "Sales" || whichViz == "None" || whichViz == "Shipping") {   
             changeText('Not Right Now.'); 
             return 0;
         }
@@ -251,7 +251,7 @@ function initialize(){
    function filterSwords(){
        
         // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
+           if (whichViz == "Sales" || whichViz == "None" || whichViz == "Shipping") {   
             changeText('Not Right Now.'); 
             return 0;
         }
@@ -272,7 +272,7 @@ function initialize(){
    function filterPartyGames(){
        
         // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
+           if (whichViz == "Sales" || whichViz == "None" || whichViz == "Shipping") {   
             changeText('Not Right Now.'); 
             return 0;
         }
@@ -290,7 +290,7 @@ function initialize(){
    function filterStrategyGames(){
        
         // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
+           if (whichViz == "Sales" || whichViz == "None" || whichViz == "Shipping") {   
             changeText('Not Right Now.'); 
             return 0;
         }
@@ -312,7 +312,7 @@ function initialize(){
 function filterSpooky(){
        
         // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
+           if (whichViz == "Sales" || whichViz == "None" || whichViz == "Shipping") {   
             changeText('Not Right Now.'); 
             return 0;
         }
@@ -332,7 +332,7 @@ function filterSpooky(){
 function filterClassicGames(){
        
         // This button shouldn't do anything if we are viewing the Sales dashboard
-        if (whichViz == "Sales" || whichViz == "None") {
+           if (whichViz == "Sales" || whichViz == "None" || whichViz == "Shipping") {   
             changeText('Not Right Now.'); 
             return 0;
         }

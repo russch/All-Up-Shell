@@ -1,0 +1,15 @@
+<html>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>   
+<script type="text/javascript" src="http://tableau.russellchristopher.org/javascripts/api/tableau_v8.debug.js"></script>     
+  
+    <div id="showstuff"></div>  
+    
+    <script>
+        mainVizDiv = $('#showstuff'); 
+        var mainVizOptions = { hideTabs: true, hideToolbar: true }; 
+        // Create viz 
+        var mainViz = new tableauSoftware.Viz(mainVizDiv[0], 'http://public.tableausoftware.com/views/taleof100_0/Dashboardat570', mainVizOptions);
+
+    </script>
+</html>
