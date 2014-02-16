@@ -19,6 +19,10 @@ function initialize(){
                     disposeViz();
                     mainVizDiv.append("<img id='profile' src='images/Profile.jpg' alt='Stylin and Profilin' align='middle'/>");        
                     break;
+                case "Messages":
+                    disposeViz();
+                    mainVizDiv.append("<img id='profile' src='images/messages.png' alt='Stylin and Profilin' align='middle'/>");        
+                    break;
                 case "Sales Report":  
                     whichViz = "Sales"; // Track which viz is being displayed...
                     renderViz('https://tableau.russellchristopher.org/t/SkunkWorks/views/CerebralGameSelling/SalesDashboard');       
