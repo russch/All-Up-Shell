@@ -36,7 +36,7 @@ p {
  border: 1px solid #ccc;
  height: 100px;
  margin: 0px 0px 0px 0px;
- background: #553285 ;
+ background: #D3D9DF ;
 }
 
 #logodiv {
@@ -60,7 +60,7 @@ p {
 #leftcolumn { 
  color: #333;
  border: 1px solid #ccc;
- background: #9768D1 ;
+ background: #DBDBCE;
  margin: 0px 0px 0px 0px;
  padding: 0px;
  height: 550px;
@@ -96,7 +96,7 @@ p {
  clear: both;
  color: #FFF;
  border: 1px solid #ccc;
- background: #553285 ;
+ background: #D3D9DF;
  margin: 0px 0px 10px 0px;
  padding: 10px;
 }
@@ -111,8 +111,8 @@ p {
         
 .ui-menu {position:relative;
     width: 110px;
-    color: #9768D1 ;
-    background: #9768D1 ;
+    color: #DBDBCE ;
+    background: #DBDBCE;
     border: 0px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
@@ -135,7 +135,7 @@ p {
 
 .mytable th {
     font-size: 12px;
-    background-color: #9768D1 ;
+    background-color: #DBDBCE ;
     height:100%;
     width: 100%;
     margin: 0;
@@ -144,7 +144,7 @@ p {
 
 }
 .mytable tr {
-    background-color: #9768D1 ;
+    background-color: #DBDBCE ;
     height:50px;
 }
 .mytable td {
